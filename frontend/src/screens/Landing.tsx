@@ -2,13 +2,29 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
-    <div className="h-screen bg-amber-600 bg-opacity-60 flex flex-col gap-5 justify-center items-center">
-      <h1>Checkmate</h1>
-      <Link to="/game">
-        <button className="px-4 py-1 text-xl font-semibold bg-green-600 rounded-full">
-          Start
-        </button>
-      </Link>
+    <div className="h-screen bg-black/90 flex flex-col justify-between items-center">
+      <section className="flex flex-col justify-center items-center flex-grow lg:mt-24">
+        <h1 className="mb-7 text-4xl sm:text-6xl text-white font-bold">
+          Checkmate
+        </h1>
+        <Link to="/game">
+          <button className="p-2 sm:px-4 sm:py-3 sm:text-xl text-white font-semibold tracking-wider bg-gradient-to-r from-green-600 to-emerald-800 rounded-lg">
+            Play Online
+          </button>
+        </Link>
+      </section>
+      <div className="w-full flex justify-end items-end lg:justify-between">
+        <img
+          src="/src/assets/HeroImage.png"
+          alt="Checkmate"
+          className="max-h-[350px] object-contain scale-x-[-1] hidden lg:block"
+        />
+        <img
+          src="/src/assets/HeroImage.png"
+          alt="Checkmate"
+          className="max-h-[350px] object-contain"
+        />
+      </div>
     </div>
   );
 };

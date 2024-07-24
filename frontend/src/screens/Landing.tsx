@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from "../components/Button";
 
 const Landing = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="h-screen bg-black/90 flex flex-col justify-between items-center select-none">
       <section className="flex flex-col justify-center items-center flex-grow lg:mt-24">
         <h1 className="mb-14 text-4xl sm:text-6xl text-white font-bold font-rowdies ">
           Checkmate
         </h1>
-        <Link to="/game">
-          <button className="p-2 sm:px-4 sm:py-3 sm:text-xl text-white font-semibold font-mono tracking-wide bg-gradient-to-r from-green-600 to-emerald-800 rounded-lg ">
-            Play Online
-          </button>
-        </Link>
+        <Button onClick={() => navigate("/game")}>Play Online</Button>
       </section>
       <div className="w-full flex justify-end items-end lg:justify-between">
         <img

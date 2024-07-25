@@ -47,9 +47,14 @@ const Game = () => {
     <div className="h-screen flex justify-center bg-black/90">
       <main className="sm:flex sm:flex-col md:flex-row justify-around items-center w-full  max-w-fit">
         <section className="w-full text-center">
-          <ChessBoard board={board} />
+          <ChessBoard
+            socket={socket}
+            board={board}
+            setBoard={setBoard}
+            chess={chess}
+          />
         </section>
-        <aside className="m-24 lg:w-96 lg:h-96 flex justify-center items-center">
+        <aside className="mt-14 sm:mt-0 lg:w-96 lg:h-96 flex justify-center items-center">
           <Button
             onClick={() => {
               socket.send(JSON.stringify({ type: INIT_GAME }));
